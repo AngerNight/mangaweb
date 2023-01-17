@@ -20,8 +20,8 @@ li{
 :root {
     --text-color:#4d5168;
     --text-color-off:#948084;
-    --themes-color:#ff5454;
-    --themes-color-off:#ff0000;
+    --themes-color:#5c8ee6;
+    --themes-color-off:#1f4b99;
     --white:#fff;
     --background-color:#999;
     --tag-color: #888888;
@@ -218,7 +218,8 @@ li{
 #profil-icon:hover{
     background-color: var(--themes-color-off);
 }
-.first-item{   
+.first-item{
+  display: none;
   width: 100%;
   margin-top: 10rem;
   display: flex;
@@ -302,7 +303,7 @@ li{
     width: 100%;
 }
 .item-2{
-    background-image: url("hot-content-bg.png");
+    background-image: url("/static/images/hot-content-bg.png");
     width: 70%;
     display: flex;
     flex-direction: row;
@@ -620,7 +621,7 @@ li{
     width: 100%;
 }
 #detail-first-button{
-    box-shadow: 0px 5px 10px rgb(255 32 78 / 30%);
+    box-shadow: 0px 5px 10px var(--themes-color-off);
     background-color: var(--themes-color);
 }
 .detail-buttons{
@@ -634,7 +635,7 @@ li{
     border-radius: 3rem;
 }
 .detail-buttons:hover{
-    box-shadow: 0px 5px 10px rgb(255 32 78 / 30%);
+    box-shadow: 0px 5px 10px var(--themes-color)
 }
 .interact-icon{
     height: 25px;
@@ -752,7 +753,7 @@ li{
     justify-content: center;
 }
 .chapter:hover{
-    box-shadow: 0px 5px 10px rgb(255 32 78 / 30%);
+    box-shadow: 0px 5px 10px var(--themes-color);
 }
 .chapter-bottom{
     display: flex;
@@ -1036,6 +1037,7 @@ li{
     }
     .detail-image{
         margin-bottom: 1rem;
+        box-shadow: 0px 5px 10px var(--themes-color);
     }
     .detail-top-authorname{
         margin-top: 1rem;

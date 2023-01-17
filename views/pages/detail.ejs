@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Üst</button>
     <%- include ("../partials/bgimage.ejs") %>
         <div class="wraper">
             <input id="view-num" type="hidden" value= "<%= view_update  %>"> 
@@ -43,6 +44,7 @@
                             <div class="item-2-right-datas">
                                 <img src="/static/images/eye.svg" alt="" class="item-2-right-icon-eye">
                                 <span id="view-manga" class="item-2-right-icon-num">
+                                    <%=mangas.dataValues.manga_view%>
                                 </span>
                                 <!-- <img src="/static/images/like.svg" alt="" class="item-2-right-icon"> -->
                                 <span class="item-2-right-icon-num">

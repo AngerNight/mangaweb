@@ -4,13 +4,20 @@
 <desc>Created with Fabric.js 5.2.4</desc>
 <defs>
 </defs>
-<g transform="matrix(1 0 0 1 540 540)" id="2eaf8b29-7b36-4b1b-bf47-938d14d0c670"  >
+<g transform="matrix(1 0 0 1 540 540)" id="93ed69cf-b201-465e-8df8-e7ec6d1ff4e2"  >
 <rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
 </g>
-<g transform="matrix(1 0 0 1 540 540)" id="5e768f0f-159a-44cb-82b0-e237e5484fe0"  >
+<g transform="matrix(1 0 0 1 540 540)" id="503d4129-5e56-4d9d-8e14-3d30fd9b868f"  >
 </g>
-<g transform="matrix(1 0 0 1 540 540)" id="8e41a092-ba7e-40f6-a5c7-431d88632b20"  >
-<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,84,84); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-500.01, -500.01)" d="M 649.4 785.8 L 671 764.2 C 690.1 745 690.1 714 671 694.9 L 510.7 534.7 C 501.2 525.2 496.4 512.6 496.4 500.1 C 496.4 487.6 501.1 475.1 510.7 465.5 L 671 305.2 C 690.1 286 690.1 255 671 235.9 L 649.4 214.3 C 630.2 195.2 599.2 195.2 580.1 214.3 L 329 465.4 C 319.5 474.9 314.7 487.5 314.7 500 C 314.7 512.5 319.4 525 329 534.6 L 580.1 785.7 C 599.2 804.8 630.2 804.8 649.4 785.8 z" stroke-linecap="round" />
+<g transform="matrix(1 0 0 1 540 540)"  >
+<g style="" vector-effect="non-scaling-stroke"   >
+		<g transform="matrix(1 0 0 1 0 0)"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(92,142,230); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+</g>
+		<g transform="matrix(1 0 0 1 0 0)"  >
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(92,142,230); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-500.01, -500.01)" d="M 649.4 785.8 L 671 764.2 C 690.1 745 690.1 714 671 694.9 L 510.7 534.7 C 501.2 525.2 496.4 512.6 496.4 500.1 C 496.4 487.6 501.1 475.1 510.7 465.5 L 671 305.2 C 690.1 286 690.1 255 671 235.9 L 649.4 214.3 C 630.2 195.2 599.2 195.2 580.1 214.3 L 329 465.4 C 319.5 474.9 314.7 487.5 314.7 500 C 314.7 512.5 319.4 525 329 534.6 L 580.1 785.7 C 599.2 804.8 630.2 804.8 649.4 785.8 z" stroke-linecap="round" />
+</g>
+</g>
 </g>
 <g transform="matrix(NaN NaN NaN NaN 0 0)"  >
 <g style=""   >
