@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= mangas.dataValues.manga_title %></title>
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%- include ("../partials/bgimage.ejs") %>
+        <div class="wraper">
+            <input id="view-num" type="hidden" value= "<%= view_update  %>"> 
+            <%- include ("../partials/mobile_nav.ejs") %>
+                <%- include ("../partials/nav.ejs") %>
+                    <div class="top-road-title">
+                        <a id="road-active" href="/">Anasayfa</a>
+                        <span class="top-road">/</span>
+                        <span class="top-road">
+                            <%= category.dataValues.category_title %>
+                        </span>
+                        <span class="top-road">/</span>
+                        <span class="top-road">
+                            <%= mangas.dataValues.manga_title %>
+                        </span>
+                    </div>
+                    <div class="detail-top-info">
+                        <img src=<%=mangas.dataValues.manga_image%> alt="" class="detail-image">
+                        <div class="detail-top-right-side">
+                            <span class="detail-top-title">
+                                <%= mangas.dataValues.manga_title %>
+                            </span>
+                            <span class="detail-top-tags">
+                                <%= category.dataValues.category_title %>
+                            </span>
+                            <div class="item-2-right-datas">
+                                <img src="/static/images/eye.svg" alt="" class="item-2-right-icon-eye">
+                                <span id="view-manga" class="item-2-right-icon-num">
+                                </span>
+                                <!-- <img src="/static/images/like.svg" alt="" class="item-2-right-icon"> -->
+                                <span class="item-2-right-icon-num">
+                                   
+                                </span>
+                            </div>
+                            <span class="detail-top-authorname">Yazar İsmi: <%=mangas.dataValues.manga_author%></span>
+                            <span class="detail-top-description">
+                                <%=mangas.dataValues.manga_description%>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="detail-interact-buttons">
+                        <a href="/comics/watch/<%=episodes[0].episode_id%> " id="detail-first-button" class="detail-buttons">
+                            <img class="interact-icon" src="/static/images/book.svg" alt="">
+                            <span class="detail-read">BÖLÜM 1</span>
+                        </a>
+                        <a href="" class="detail-buttons">
+                            <img class="interact-icon" src="/static/images/subcribe.svg" alt="">
+                            <span class="detail-subscribe">Abone Ol</span>
+                        </a>
+                        <a href="" class="detail-buttons">
+                            <img class="interact-icon" src="/static/images/share.svg" alt="">
+                            <span class="detail-share">Paylaş</span>
+                        </a>
+                    </div>
+                    <a href="" class="detail-banner">
+                        <img src="/static/images/detail-banner.png" alt="">
+                    </a>
+                    <div class="episodes-info">
+                        <div class="episodes-left">
+                            <span class="episodes">Bölümler</span>
+                            <span class="chapter-update">176. Bölüm Güncellendi</span>
+                            <span class="split-line">/</span>
+                            <span class="comments">Yorumlar</span>
+                            <!-- <span class="comment-num">(18470)</span> -->
+                        </div>
+                        <div class="episodes-right">
+                            <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'tag1')">A-Z</button>
+                            <button class="tablinks" onclick="openCity(event, 'tag2')">Z-A</button>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div id="tag1" class="tabcontent">
+                        <div class="chapter-list">
+                            <% episodes.forEach(episode=> { %>
+                                <a href="/comics/watch/<%=episode.dataValues.episode_id%>" class="chapter">
+                                    <span class="chapter-num">
+                                        <%=episode.dataValues.episode_title%>
+                                    </span>
+                                    <div class="chapter-bottom">
+                                        <span class="chapter-date">
+                                            <%=episode.dataValues.episode_date%>
+                                        </span>
+                                        <div class="chapter-likes-comments">
+                                            <div class="chapter-icons">
+                                                <img src="/static/images/detail-like.svg" alt=""
+                                                    class="chapter-like-commnet-icon">
+                                                <span class="chapter-like-comment-num">
+                                                    <%=episode.dataValues.episode_like%>
+                                                </span>
+                                            </div>
+                                            <div class="chapter-icons">
+                                                <img src="/static/images/detail-comment.svg" alt=""
+                                                    class="chapter-like-commnet-icon">
+                                                <span class="chapter-like-comment-num">
+                                                    <%=episode.dataValues.episode_comment%>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <% }) %>
+
+                        </div>
+                    </div>
+                    <div id="tag2" class="tabcontent">
+                        <div class="chapter-list">
+                            <% reserveepisodes.forEach(reserveepisode=> { %>
+                                <a href="/comics/watch/<%=reserveepisode.dataValues.episode_id%>" class="chapter">
+                                    <span class="chapter-num">
+                                        <%=reserveepisode.dataValues.episode_title%>
+                                    </span>
+                                    <div class="chapter-bottom">
+                                        <span class="chapter-date">
+                                            <%=reserveepisode.dataValues.episode_date%>
+                                        </span>
+                                        <div class="chapter-likes-comments">
+                                            <div class="chapter-icons">
+                                                <img src="/static/images/detail-like.svg" alt=""
+                                                    class="chapter-like-commnet-icon">
+                                                <span class="chapter-like-comment-num">
+                                                    <%=reserveepisode.dataValues.episode_like%>
+                                                </span>
+                                            </div>
+                                            <div class="chapter-icons">
+                                                <img src="/static/images/detail-comment.svg" alt=""
+                                                    class="chapter-like-commnet-icon">
+                                                <span class="chapter-like-comment-num">
+                                                    <%=reserveepisode.dataValues.episode_comment%>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <% }) %>
+
+                        </div>
+                    </div>
+                    <div class="default-item">
+                        <div class="top-items-title">
+                            <span class="title">Senin İçin Öneriler</span>
+                        </div>
+                        <div class="default-item-3">
+                            <% randommangas.forEach(randommanga=> { %>
+                                <a href="/comics/<%=randommanga.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=randommanga.dataValues.manga_image%> alt="">
+                                    <span class="item-title">
+                                        <%=randommanga.dataValues.manga_title%>
+                                    </span>
+                                </a>
+                                <% }) %>
+                        </div>
+                    </div>
+        </div>
+        <%- include ("../partials/footer.ejs") %>
+</body>
+<!-- TABS CONTROLLER -->
+<script src="/static/js/comic_tabs.js"></script>
+<!-- VIEW CONTROLLER -->
+<script src="/static/js/manga_view.js"></script>
+</html>

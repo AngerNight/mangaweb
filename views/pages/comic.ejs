@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangalar</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%- include ("../partials/bgimage.ejs") %>
+        <div class="wraper">
+            <%- include ("../partials/mobile_nav.ejs") %>
+            <%- include ("../partials/nav.ejs") %>
+                <div class="top-road-title">
+                    <a id="road-active" href="/">Anasayfa</a>
+                    <span class="top-road">/</span>
+                    <span class="top-road">Kategoriler</span>
+                </div>
+        </div>
+        <div class="genres-bg">
+            <div class="genres">
+                <span id="genres-title">Kategoriler</span>
+                <div class="type-items">
+                    <ul>
+                        <li><button id="defaultOpen" class="tablinks" onclick="openCity(event, 'tag1')">Tümü</button>
+                        </li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag2')">Fantazi</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag3')">Macera</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag4')">Shounen</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag5')">Hayatta kalma</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag6')">İntikam</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag7')">Dövüş sanatları</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag8')">Komedi</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag9')">Murim</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag10')">Doğaüstü</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag11')">Büyü</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag12')">Reenkarnasyon</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag13')">Vahşet</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag14')">Video oyunları</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag15')">Bilim kurgu</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag16')">Süper güçler</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag17')">Geri dönüş</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag18')">Gizem</button></li>
+                        <li><button class="tablinks" onclick="openCity(event, 'tag19')">+16</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="default-item">
+                <div id="tag1" class="tabcontent">
+                    <div class="default-item-3">
+                        <% mangas.forEach(manga=> { %>
+                            <a href="/comics/<%=manga.dataValues.manga_url%>" class="item-3">
+                                <img class="item-img" src=<%=manga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=manga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=manga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag2" class="tabcontent">
+                    <div class="default-item-3">
+                        <% fantazimangas.forEach(fantazimanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=fantazimanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=fantazimanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=fantazimanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag3" class="tabcontent">
+                    <div class="default-item-3">
+                        <% maceramangas.forEach(maceramanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=maceramanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=maceramanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=maceramanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag4" class="tabcontent">
+                    <div class="default-item-3">
+                        <% shounenmangas.forEach(shounenmanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=shounenmanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=shounenmanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=shounenmanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag5" class="tabcontent">
+                    <div class="default-item-3">
+                        <% hayattakalmamangas.forEach(hayattakalmamanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=hayattakalmamanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=hayattakalmamanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=hayattakalmamanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag6" class="tabcontent">
+                    <div class="default-item-3">
+                        <% intikammangas.forEach(intikammanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=intikammanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=intikammanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=intikammanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag7" class="tabcontent">
+                    <div class="default-item-3">
+                        <% dovussanatlarimangas.forEach(dovussanatlarimanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=dovussanatlarimanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=dovussanatlarimanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=dovussanatlarimanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag8" class="tabcontent">
+                    <div class="default-item-3">
+                        <% komedimangas.forEach(komedimanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=komedimanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=komedimanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=komedimanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag9" class="tabcontent">
+                    <div class="default-item-3">
+                        <% murimmangas.forEach(murimmanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=murimmanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=murimmanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=murimmanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag10" class="tabcontent">
+                    <div class="default-item-3">
+                        <% dogaustumangas.forEach(dogaustumanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=dogaustumanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=dogaustumanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=dogaustumanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag11" class="tabcontent">
+                    <div class="default-item-3">
+                        <% buyumangas.forEach(buyumanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=buyumanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=buyumanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=buyumanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag12" class="tabcontent">
+                    <div class="default-item-3">
+                        <% reenkarnasyonmangas.forEach(reenkarnasyonmanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=reenkarnasyonmanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=reenkarnasyonmanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=reenkarnasyonmanga.dataValues.manga_view%>
+                                    </span>
+
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag13" class="tabcontent">
+                    <div class="default-item-3">
+                        <% vahsetmangas.forEach(vahsetmanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=vahsetmanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=vahsetmanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=vahsetmanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag14" class="tabcontent">
+                    <div class="default-item-3">
+                        <% videooyunlarimangas.forEach(videooyunlarimanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=videooyunlarimanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=videooyunlarimanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=videooyunlarimanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag15" class="tabcontent">
+                    <div class="default-item-3">
+                        <% bilimkurgumangas.forEach(bilimkurgumanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=bilimkurgumanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=bilimkurgumanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=bilimkurgumanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag16" class="tabcontent">
+                    <div class="default-item-3">
+                        <% superguclermangas.forEach(superguclermanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=superguclermanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=superguclermanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=superguclermanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag17" class="tabcontent">
+                    <div class="default-item-3">
+                        <% geridonusmangas.forEach(geridonusmanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=geridonusmanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=geridonusmanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=geridonusmanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag18" class="tabcontent">
+                    <div class="default-item-3">
+                        <% gizemmangas.forEach(gizemmanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=gizemmanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=gizemmanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=gizemmanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+                <div id="tag19" class="tabcontent">
+                    <div class="default-item-3">
+                        <% plusonaltimangas.forEach(plusonaltimanga=> { %>
+                            <a href="" class="item-3">
+                                <img class="item-img" src=<%=plusonaltimanga.dataValues.manga_image%> alt="">
+                                <span class="item-title">
+                                    <%=plusonaltimanga.dataValues.manga_title%>
+                                </span>
+                                <div class="item-2-right-datas">
+                                    <img src="/static/images/eye.svg" alt="" class="item-2-right-icon">
+                                    <span id="data-num" class="item-2-right-icon-num">
+                                        <%=plusonaltimanga.dataValues.manga_view%>
+                                    </span>
+                                </div>
+                                <span class="item-2-right-road">Scool life/Romance/Time Travel/Comedy/Time
+                                    Travel/Comedy</span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include ("../partials/footer.ejs") %>
+</body>
+<!-- TABS CONTROLLER -->
+<script src="/static/js/comic_tabs.js"></script>
+
+</html>

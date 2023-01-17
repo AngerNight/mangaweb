@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ücretsiz manga oku / Anasayfa</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%- include ("../partials/bgimage.ejs") %>
+        <div class="wraper">   
+            <%- include ("../partials/mobile_nav.ejs") %>
+            <%- include ("../partials/nav.ejs") %>
+                <div class="first-item">
+                    <span class="title">Güncel İçerik</span>
+                    <div class="first-items">
+                        <a class="item-1" href="">
+                            <img src="/static/images/image1.jpg" alt="" class="item-1-img">
+                            <span class="item-title">Dubious Moon</span>
+                        </a>
+                        <a class="item-1" href="">
+                            <img src="/static/images/image1.jpg" alt="" class="item-1-img">
+                            <span class="item-title">Dubious Moon</span>
+                        </a>
+                        <a class="item-1" href="">
+                            <img src="/static/images/image1.jpg" alt="" class="item-1-img">
+                            <span class="item-title">Dubious Moon</span>
+                        </a>
+                        <a class="item-1" href="">
+                            <img src="/static/images/image1.jpg" alt="" class="item-1-img">
+                            <span class="item-title">Dubious Moon</span>
+                        </a>
+                        <a class="item-1" href="">
+                            <img src="/static/images/image1.jpg" alt="" class="item-1-img">
+                            <span class="item-title">Dubious Moon</span>
+                        </a>
+                        <a class="item-1" href="">
+                            <img src="/static/images/image1.jpg" alt="" class="item-1-img">
+                            <span class="item-title">Dubious Moon</span>
+                        </a>
+                        <a class="item-1" href="">
+                            <img src="/static/images/image1.jpg" alt="" class="item-1-img">
+                            <span class="item-title">Dubious Moon</span>
+                        </a>
+                        <a class="item-1" href="">
+                            <img src="/static/images/image1.jpg" alt="" class="item-1-img">
+                            <span class="item-title">Dubious Moon</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="second-item">
+                    <div class="top-items-title">
+                        <span class="title">Yeni Güncelleme</span>
+                        <a href="/comics" class="seeall">Tümü ></a>
+                    </div>
+                    <div class="second-items">
+                        <div class="second-item-2">
+                            <% toprandommangas.forEach(toprandommanga => { %>
+                                <a href="/comics/<%=toprandommanga.dataValues.manga_url%>" class="item-2">
+                                    <img src="<%=toprandommanga.dataValues.manga_image%>" alt="" class="item-2-left">
+                                    <div class="item-2-right">
+                                        <span class="item-2-right-title"><%=toprandommanga.dataValues.manga_title%></span>
+                                        <span class="item-2-right-road"><%=toprandommanga.dataValues.manga_title%></span>
+                                        <div class="item-2-right-datas">
+                                            <img src="/static/images/eye.svg" alt="" class="item-2-right-icon-eye">
+                                            <span class="item-2-right-icon-num"><%=toprandommanga.dataValues.manga_view%></span>
+                                            <!-- <img src="/static/images/like.svg" alt="" class="item-2-right-icon"> -->
+                                            <span class="item-2-right-icon-num"></span>
+                                        </div>
+                                        <div class="item-2-right-description">
+                                            <%=toprandommanga.dataValues.manga_description%>
+                                        </div>
+                                    </div>
+                                </a>
+                            <% }) %>
+                        </div>
+                        <div class="default-item-3">
+                            <% randommangas.forEach(randommanga => { %>
+                                <a href="/comics/<%=randommanga.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=randommanga.dataValues.manga_image%> alt="">
+                                    <span class="item-title"><%=randommanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>  
+                        </div>
+                    </div>
+                </div>
+                <div class="third-item">
+                    <div class="top-items-title">
+                        <span class="title">Kategoriler</span>
+                        <a href="/comics" class="seeall">Tümü ></a>
+                    </div>
+                    <div class="third-item-genres">
+                        <ul>
+                            <li><button id="defaultOpen" class="tablinks"
+                                    onclick="openCity(event, 'tag1')">Fantazi</button></li>
+                            <li><button class="tablinks" onclick="openCity(event, 'tag2')">Macera</button></li>
+                            <li><button class="tablinks" onclick="openCity(event, 'tag3')">Shounen</button></li>
+                            <li><button class="tablinks" onclick="openCity(event, 'tag4')">Hayatta kalma</button>
+                            </li>
+                            <li><button class="tablinks" onclick="openCity(event, 'tag5')">İntikam</button></li>
+                            <li><button class="tablinks" onclick="openCity(event, 'tag6')">Dövüş sanatları</button>
+                            </li>
+                            <li><button class="tablinks" onclick="openCity(event, 'tag7')">Komedi</button></li>
+                            <li><button class="tablinks" onclick="openCity(event, 'tag8')">Murim</button></li>
+                            <li><button class="tablinks" onclick="openCity(event, 'tag8')">Doğaüstü</button></li>
+                         
+                        </ul>
+                    </div>
+                    <div id="tag1" class="tabcontent">
+                        <div class="default-item-3">
+                            <% fantazimangas.forEach(fantazimanga => { %>
+                                <a href="/comics/<%=fantazimanga.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=fantazimanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=fantazimanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div id="tag2" class="tabcontent">
+                        <div class="default-item-3">
+                            <% maceramangas.forEach(maceramanga => { %>
+                                <a href="/comics/<%=maceramanga.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=maceramanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=maceramanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div id="tag3" class="tabcontent">
+                        <div class="default-item-3">
+                            <% shounenmangas.forEach(shounenmanga => { %>
+                                <a href="/comics/<%=shounenmangas.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=shounenmanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=shounenmanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div id="tag4" class="tabcontent">
+                        <div class="default-item-3">
+                            <% hayattakalmamangas.forEach(hayattakalmamanga => { %>
+                                <a href="/comics/<%=hayattakalmamangas.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=hayattakalmamanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=hayattakalmamanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div id="tag5" class="tabcontent">
+                        <div class="default-item-3">
+                            <% intikammangas.forEach(intikammanga => { %>
+                                <a href="/comics/<%=intikammangas.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=intikammanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=intikammanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div id="tag6" class="tabcontent">
+                        <div class="default-item-3">
+                            <% dovussanatlarimangas.forEach(dovussanatlarimanga => { %>
+                                <a href="/comics/<%=dovussanatlarimangas.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=dovussanatlarimanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=dovussanatlarimanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div id="tag7" class="tabcontent">
+                        <div class="default-item-3">
+                            <% komedimangas.forEach(komedimanga => { %>
+                                <a href="/comics/<%=komedimangas.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=komedimanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=komedimanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div id="tag8" class="tabcontent">
+                        <div class="default-item-3">
+                            <% murimmangas.forEach(murimmanga => { %>
+                                <a href="/comics/<%=murimmangas.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=murimmanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=murimmanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div id="tag9" class="tabcontent">
+                        <div class="default-item-3">
+                            <% dogaustumangas.forEach(dogaustumanga => { %>
+                                <a href="/comics/<%=dogaustumangas.dataValues.manga_url%>" class="item-3">
+                                    <img class="item-img" src=<%=dogaustumanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=dogaustumanga.dataValues.manga_title%></span>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+                <div class="default-item">
+                    <div class="top-items-title">
+                        <span class="title">Yeni İçerikler</span>
+                        <a href="/comics" class="seeall">Tümü ></a>
+                    </div>
+                    <div class="default-item-3">
+                        <% newmangas.forEach(newmanga => { %>
+                            <a href="/comics/<%=newmanga.dataValues.manga_url%>" class="item-3">
+                                <img class="item-img" src=<%=newmanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=newmanga.dataValues.manga_title%></span>
+                            </a>
+                        <% }) %>  
+                    </div>
+                </div>
+                <div class="default-item">
+                    <div class="top-items-title">
+                        <span class="title">Tamamlanmış İçerikler</span>
+                        <a href="/comics" class="seeall">Tümü ></a>
+                    </div>
+                    <div class="default-item-3">
+                        <% completemangas.forEach(completemanga => { %>
+                            <a href="/comics/<%=completemanga.dataValues.manga_url%>" class="item-3">
+                                <img class="item-img" src=<%=completemanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=completemanga.dataValues.manga_title%></span>
+                            </a>
+                        <% }) %>
+                        
+                    </div>
+                </div>
+                <div class="default-item">
+                    <div class="top-items-title">
+                        <span class="title">Bugün Güncellenenler</span>
+                        <a href="/comics" class="seeall">Tümü ></a>
+                    </div>
+                    <div class="default-item-3">
+                        <% updatemangas.forEach(updatemanga => { %>
+                            <a href="/comics/<%=updatemanga.dataValues.manga_url%>" class="item-3">
+                                <img class="item-img" src=<%=updatemanga.dataValues.manga_image%> alt="">
+                                <span class="item-title"><%=updatemanga.dataValues.manga_title%></span>
+                            </a>
+                        <% }) %>  
+                    </div>
+                </div>
+        </div>
+        <%- include ("../partials/footer.ejs") %>
+</body>
+<!-- TABS CONTROLLER -->
+<script src="/static/js/comic_tabs.js"></script>
+<!-- SCROLL CONTROLLER -->
+<script src="/static/js/scroll_to_top.js"></script>
+</html>
