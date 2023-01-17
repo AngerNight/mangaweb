@@ -1161,6 +1161,9 @@ li{
     .default-item-3{
         width: 98%;
     }
+    .search-area{
+        margin-top: 1rem;
+    }
 }
 
 
