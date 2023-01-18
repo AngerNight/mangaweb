@@ -207,6 +207,7 @@ li{
     border-color: var(--themes-color-off);
 }
 #profil-icon{
+    display: none;
     padding: 10px 30px;
     background-color: var(--themes-color);
     border-radius: 2rem;

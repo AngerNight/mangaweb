@@ -71,37 +71,33 @@
 <script src="/static/js/scroll_to_top.js"></script>
 
 <script>
-    var oldValue = "";
     function search() {
-      var searchValue = document.getElementById("search-input").value;
-      if (searchValue === "") {
-        oldValue = "";
+    var searchValue = document.getElementById("search-input").value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", `/api/D3H6G1J7K2M8/${searchValue}`);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        var searchResults = document.getElementById("search-results");
+        var noItems = document.getElementById("no-items");
+        var searchnotready = document.getElementById("search-notready");
+        searchResults.innerHTML = "";
+        if(data.lenght === 0){
+            noItems.style.display = "block";
+            noItems.textContent = "Item bulunmadı";
+            searchnotready.style.display = "flex";
+        }else{
+            noItems.style.display = "none";
+            searchnotready.style.display = "none";
+            data.forEach(function(item) {
+          var li = document.createElement("li");
+          li.textContent = item.manga_title;
+          searchResults.appendChild(li);
+        });
+        }
       }
-      if (searchValue !== "" && searchValue !== oldValue) {
-        oldValue = searchValue;
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", `/api/D3H6G1J7K2M8/${searchValue}`);
-        xhr.onload = function() {
-          if (xhr.status === 200) {
-            var data = JSON.parse(xhr.responseText);
-            var searchResults = document.getElementById("search-results");
-            var noItems = document.getElementById("no-items");
-            searchResults.innerHTML = "";
-            if (data.length === 0) {
-              noItems.style.display = "block";
-              noItems.textContent = "Item bulunmadı";
-            } else {
-              noItems.style.display = "none";
-              data.forEach(function(item) {
-                var li = document.createElement("li");
-                li.textContent = item.manga_title;
-                searchResults.appendChild(li);
-              });
-            }
-          }
-        };
+    };
         xhr.send();
-      }
-    }
+  }
   </script>
 </html>

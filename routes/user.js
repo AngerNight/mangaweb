@@ -322,8 +322,6 @@ router.get("/search", async function (req, res) {
             ]
         });
 
-
-
         res.render("pages/search.ejs", {
             randommangas: randommangas,
 
