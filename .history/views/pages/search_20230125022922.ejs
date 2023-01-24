@@ -43,6 +43,7 @@
                 <div class="default-item-3">
                     <ul id="search-results"></ul>
                     <p id="no-items" style="display:none;"></p>
+                    <p id="search-notactive" style="display:none;"></p>
                 </div>
             </div>
           
@@ -74,8 +75,10 @@
     function search() {
       var searchValue = document.getElementById("search-input").value;
       var searchResults = document.getElementById("search-results");
-      var noItems = document.getElementById("no-items");
       if (searchValue === "") {
+       var searchNotactive = document.getElementById("search-notactive");
+       searchNotactive.style.display = "block";
+       searchNotactive.textContent = "Arama Yap...";
        searchResults.style.display = "none";
        noItems.style.display = "none";
       }else {
@@ -84,7 +87,8 @@
         xhr.onload = function() {
           if (xhr.status === 200) {
             searchResults.style.display = "block";
-            var data = JSON.parse(xhr.responseText);   
+            var data = JSON.parse(xhr.responseText);
+            var noItems = document.getElementById("no-items");
             searchResults.innerHTML = "";
             if (data.length === 0) { 
               noItems.style.display = "block";

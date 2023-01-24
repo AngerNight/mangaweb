@@ -77,7 +77,8 @@
       var noItems = document.getElementById("no-items");
       if (searchValue === "") {
        searchResults.style.display = "none";
-       noItems.style.display = "none";
+       noItems.style.display = "block";
+       noItems.textContent = "Arama Yap";
       }else {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", `/api/D3H6G1J7K2M8/${searchValue}`);
