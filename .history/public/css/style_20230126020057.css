@@ -1171,6 +1171,10 @@ li{
     }
     .search-area{
         margin-top: 1rem;
+        width: 30%;
+    }
+    .in-form{
+        width: 40%;
     }
 }
 

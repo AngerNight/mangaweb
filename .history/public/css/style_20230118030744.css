@@ -554,13 +554,6 @@ li{
     width: 100%;
     height: 40px;
 }
-.search-input{
-    margin-left: 1rem;
-    width: 90%;
-    height: 90%;
-    border: none;
-    outline: none;
-}
 #id-input-search {
     width: 90%;
     height: 27px;
