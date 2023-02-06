@@ -40,19 +40,4 @@ function search() {
       xhr.send();
     }
   }
-
-  // var li = document.createElement("li");
-  // var a = document.createElement("a");
-  // var img = document.createElement("img");
-  // var span = document.createElement("span");
-  // a.classList.add("item-3");
-  // img.classList.add("item-img");
-  // span.classList.add("item-title");
-  // a.href = item.manga_url
-  // img.src = item.manga_image
-  // span.textContent = item.manga_title
-  // searchResults.appendChild(li)
-  //   li.appendChild(a)
-  //   a.appendChild(img)
-  //   a.appendChild(span)
  
