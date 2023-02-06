@@ -58,10 +58,13 @@
                         </div>
                     </div>
                     <div class="detail-interact-buttons">
-                        <a href="/comics/watch/<%=episodes[0].episode_id%> " id="detail-first-button" class="detail-buttons">
-                            <img class="interact-icon" src="/static/images/book.svg" alt="">
-                            <span class="detail-read">BÖLÜM 1</span>
-                        </a>
+                        <%
+                        var episodeId = episodes[0] ? episodes[0].episode_id : null;
+                      %>
+                      <a href="<%= episodeId ? '/comics/watch/' + episodeId : '#' %>" id="detail-first-button" class="detail-buttons">
+                        <img class="interact-icon" src="/static/images/book.svg" alt="">
+                        <span class="detail-read">BÖLÜM 1</span>
+                      </a>
                         <a href="" class="detail-buttons">
                             <img class="interact-icon" src="/static/images/subcribe.svg" alt="">
                             <span class="detail-subscribe">Abone Ol</span>

@@ -276,7 +276,7 @@ li{
 }
 .top-items-title{
     display: flex;
-    width: 95%;
+    width: 1230px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -286,7 +286,6 @@ li{
     color: var(--themes-color);
     font-weight: 400;
     font-size: 18px;
-    margin-right: 3rem;
 }
 .second-items{
     display: flex;
