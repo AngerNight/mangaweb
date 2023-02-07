@@ -11,11 +11,12 @@ function search() {
       xhr.onload = function() {
         if (xhr.status === 200) {
           searchResults.style.display = "flex";
+          searchResults.style.flexWrap = "wrap";
           var data = JSON.parse(xhr.responseText);   
           searchResults.innerHTML = "";
           if (data.length === 0) { 
             noItems.style.display = "block";
-            noItems.textContent = "Aradığınız manga yada yazar bulunamadı..";
+            noItems.textContent = "Aradığınız manga veya yazar bulunamadı..";
           } else {
             noItems.style.display = "none";
             data.forEach(function(item) {
