@@ -1041,6 +1041,8 @@ li {
 }
 
 .footer {
+    position: absolute;
+    bottom: -10;
     margin-top: auto;
     flex-shrink: 0;
     width: 100%;
@@ -1052,6 +1054,9 @@ li {
     overflow: hidden;
     background-color: var(--footer-color);
 }
+body.scrolled .footer {
+    bottom: 0;
+  }
 
 .copyright h5 {
     font-size: 14px;
