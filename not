@@ -1,1 +1,10 @@
+Yeni Güncelleme:
 Comic sayfasının kategoriler bölgesi mobil için kullanıma uygun değil bu bölgeyi tekrar tasarlamak ve ayrıca filtreleme eklemek gerekiyor.
+manga detay sayfasındaki yazının text-overflow: ellipsis; özelliği çalışmıyor.
+
+
+
+Yayınlama Öncesi:
+Logo Değişecek
+Sağ ve sol bg rengi değişecek
+Sayfa title'ları değişecek

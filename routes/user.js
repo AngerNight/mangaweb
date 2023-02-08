@@ -10,7 +10,7 @@ const Category = require("../models/category");
 const Episode = require("../models/episode");
 const Image = require("../models/image");
 
-
+// Page Search Api
 router.get("/api/D3H6G1J7K2M8/:id", (req, res) => {
     const veri_id = req.params.id;
     Manga.findAll({
@@ -24,7 +24,7 @@ router.get("/api/D3H6G1J7K2M8/:id", (req, res) => {
         .then((mangas) => res.json(mangas))
         .catch((err) => console.log(err));
 });
-
+// Page Episode Detail
 router.get("/comics/watch/:episodeid", async function (req, res) {
     const episodeid = req.params.episodeid;
 
@@ -53,7 +53,7 @@ router.get("/comics/watch/:episodeid", async function (req, res) {
     }
 
 });
-
+// Page Manga Detail
 router.get("/comics/:slug", async function (req, res) {
     const slug = req.params.slug;
 
@@ -128,7 +128,7 @@ router.get("/comics/:slug", async function (req, res) {
     }
 
 });
-
+// Page Category
 router.get("/comics", async function (req, res) {
 
     try {
@@ -309,7 +309,7 @@ router.get("/comics", async function (req, res) {
     }
 
 });
-
+// Page Search
 router.get("/search", async function (req, res) {
 
 
@@ -332,7 +332,7 @@ router.get("/search", async function (req, res) {
     }
 
 });
-
+// Page Main
 router.get("/", async function (req, res) {
     try {
         const newmangas = await Manga.findAll({
@@ -471,6 +471,10 @@ router.get("/", async function (req, res) {
     }
 
 });
+// Page Not Found
+router.get('*', function(req, res) {
+    res.redirect('/');
+  });
 
 
 module.exports = router;
