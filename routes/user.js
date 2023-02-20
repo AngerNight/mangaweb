@@ -2,9 +2,6 @@ const express = require("express");
 const router = express.Router();
 const sequelize = require("../data/db");
 const { Op } = require("sequelize");
-
-const db = require("../data/db");
-
 const Manga = require("../models/manga");
 const Category = require("../models/category");
 const Episode = require("../models/episode");
@@ -74,9 +71,6 @@ router.get("/comics/:slug", async function (req, res) {
                 manga_id: comicid,
             }
         });
-
-      
-
 
         const randommangas = await Manga.findAll({
             limit: 6,
