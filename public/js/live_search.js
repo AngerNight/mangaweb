@@ -28,7 +28,7 @@ function search() {
               img.classList.add("item-img");
               span.classList.add("item-title");
               a.href = ("/comics/"+item.manga_url)
-              img.src = item.manga_image
+              img.src = ("/upload/manga_avatars/"+item.manga_image)
               span.textContent = item.manga_title
               searchResults.appendChild(div)
               div.appendChild(a)
